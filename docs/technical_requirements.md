@@ -92,6 +92,7 @@ Skype у Microsoft).
 * Facebook
 * VK
 * Linkedin
+* Twitch
 
 Должна быть возможность сменить пароль, подтвердив свой старый пароль.
 
