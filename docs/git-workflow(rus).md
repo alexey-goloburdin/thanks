@@ -165,8 +165,8 @@ git push origin --delete 5-docs/git_workflow_rules
 ### Справочник всех команд
 
 ```
-git clone git@github.com:YOUR-GITHUB-USERNAME/yii2.git
-git remote add upstream git://github.com/yiisoft/yii2.git
+git clone git@github.com:YOUR-GITHUB-USERNAME/thanks.git
+git remote add upstream git://github.com/yiisoft/thanks.git
 ```
 
 ```
