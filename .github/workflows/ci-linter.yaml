@@ -1,4 +1,4 @@
-name: ci-linter
+name: ci / linter
 
 on: [push]
 
