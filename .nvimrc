@@ -403,6 +403,7 @@ nnoremap <silent> Q     :Bdelete menu<CR>
 " ------ NERDTree config ------
 let NERDTreeMinimalUI=1
 let g:NERDSpaceDelims = 1
+let NERDTreeIgnore=['__pycache__', 'venv']
 
 " ------ Lightline ------
 function! DeleteCurrentFileAndBuffer()
