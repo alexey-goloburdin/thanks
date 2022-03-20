@@ -3,15 +3,15 @@
 Models are not populated with a complete sets of attributes to avoid visual overload
 
 **user** - user instances\
-**user_profile** - user's additional information and probably settings
-**user_authentication** - authentications track
-**subscription** - the types of subscriptions an author creates for his subscribers
-**user_subscriptions** - M2M containing each user's subscriptions and their validity
-**mailing** - mailing instances an author creates
-**mailing_subscriptions** - M2M containing types of subscriptions the mailing is sent to
-**post** - author posts
-**post_subscriptions** - M2M containing types of subscriptions the post is visible to
-**post_likes** - post likes track
-**donation** - a dedicated donation initiated by tan author
-**transaction** - payments track
-**payable** - intermediate for payable instances
+**user_profile** - user's additional information and probably settings\
+**user_authentication** - authentications track\
+**subscription** - the types of subscriptions an author creates for his subscribers\
+**user_subscriptions** - M2M containing each user's subscriptions and their validity\
+**mailing** - mailing instances an author creates\
+**mailing_subscriptions** - M2M containing types of subscriptions the mailing is sent to\
+**post** - author posts\
+**post_subscriptions** - M2M containing types of subscriptions the post is visible to\
+**post_likes** - post likes track\
+**donation** - a dedicated donation initiated by tan author\
+**transaction** - payments track\
+**payable** - intermediate for payable instances\
