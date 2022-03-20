@@ -14,4 +14,4 @@ Models are not populated with a complete sets of attributes to avoid visual over
 **post_likes** - post likes track\
 **donation** - a dedicated donation initiated by tan author\
 **transaction** - payments track\
-**payable** - intermediate for payable instances\
+**payable** - intermediate for payable instances
