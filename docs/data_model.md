@@ -2,7 +2,7 @@
 
 Models are not populated with a complete sets of attributes to avoid visual overload
 
-**user** - user instances
+**user** - user instances\
 **user_profile** - user's additional information and probably settings
 **user_authentication** - authentications track
 **subscription** - the types of subscriptions an author creates for his subscribers
