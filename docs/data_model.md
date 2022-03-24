@@ -1,4 +1,114 @@
-[Data Model SVG](https://mermaid.ink/svg/pako:eNqtVl2PojAU_SuE55k_wBvjuLtkXTWiD5uYkApXbQItacvsmpH_vi3fLRXHjX0wlXvae-45t4VPN6YJuJ4L7B2jE0PZnjhy7ML5xrleX1-v12oerTerb8Fi7jkFBxbhxIR91jB_t_0xX26Dmb8NVksb-rOeq4GJcNqYGgdKU0DEwTxChThTZg_FAn8gAYOFXDBMTg5kCKejpzni_A9lDbzsqbQ1mZQkZxENeSUym8PghOWOSGBKIvVklOiIGRcRQdk4lKJbkfxMCUSkyA7Axgx1Oae0a4izEXGBM3BOQIApzSL1lwuU5SMmSvJIdYNVdbl3r2A9Wfu__TcpX-N_uHsLZ5tgXRufows6pNDRacF3ShCXHDQZxn2m5xk3WClhtGnHITY0wMOYU9Kbi3hx4DHDeWW8WU5zRHRO1hVaujsq1N0fmY9NTQfm6b0l4K9wEuhI9BHZaMBw7OTyB8b9ppX-cLuph9batV78QClWfZimRj_98oNFsPze-tz8Ne1QZ1xWbNd1eqmVW5v1cUsqlWNKBBBhqTNmcOvEdRgul5qAUuP1mCWmOJOuVMI37bwKt614am4ql1MuJhW3LbImHZ5ktcgzlTVOVo0Z3SYtX9qkXgQ_5ybPLpUB0vq22ul5x_Er7o_7puy5POa3Vu89s7sUlQ5TW3dVWNjfPPkal-5QD_1-Xy2bz4Jpz3ucKXEbeeoF-j_3p7zECogEYicQExVvN_4y9GeWV5Xx8tSAJs1B8KmutcWgjBbDK8wm1eCy6IFquC-u3EVePIn8iqzY7V1xBimn68lpAkdUpGLv7kkpoUWuWM4TLChzvSNKOby40i0aXkjseoIV0IKa79EGVf4DK4E9-A)
+erDiagram
+    USER ||--|| USER_PROFILE: user_id
+    USER ||--|{ USER_AUTHENTICATION: user_id
+    USER {
+        int id
+        boolean is_author
+        boolean is_activated
+        string email
+        string password
+    }
+    USER_PROFILE {
+        int uset_id
+        date registration_date
+        string first_name
+        string last_name
+        string phone_number
+    }
+    USER_AUTHENTICATION {
+        int id
+        int user_id
+        datetime generated_timestamp
+        string auth_code
+        boolean is_used
+    }
+
+    PAYABLE ||--|{ SUBSCRIPTION: payable_id
+    PAYABLE {
+        int id
+        int type
+    }
+    
+    USER ||--|{ SUBSCRIPTION: user_id
+    USER }|--|{ USER_SUBSCRIPTIONS: user_id
+    SUBSCRIPTION }|--|{ USER_SUBSCRIPTIONS: subscription_id
+    PAYABLE ||--|| SUBSCRIPTION: subscription_id
+    SUBSCRIPTION {
+        int id
+        int author_id
+        int payable_id
+        string name
+        text description
+        numeric price
+    }
+    USER_SUBSCRIPTIONS {
+        int id
+        int user_id
+        int subscription_id
+        datetime valid_till
+    }
+
+    MAILING ||--|{ MAILING_SUBSCRIPTIONS: mailing_id
+    SUBSCRIPTION ||--|{ MAILING_SUBSCRIPTIONS: subscription_id
+    MAILING {
+        int id
+        int author_id
+        text content
+        datetime created_timestamp
+        datetime sent_timestamp
+    }
+    MAILING_SUBSCRIPTIONS {
+        int id
+        int mailing_id
+        int subscription_id
+    }
+
+
+    POST ||--|{ POST_SUBSCRIPTIONS: post_id
+    SUBSCRIPTION ||--|{ POST_SUBSCRIPTIONS: subscription_id
+    USER ||--|{ POST: author_id
+    PAYABLE ||--|| POST: payable_id
+    POST ||--|{ POST_LIKES: post_id
+    USER ||--|{ POST_LIKES: user_id
+    POST {
+        int id
+        int author_id
+        int payable_id
+        datetime created_timestamp
+        text content
+    }
+    POST_SUBSCRIPTIONS {
+        int id
+        int post_id
+        int subscription_id
+    }
+    POST_LIKES {
+        int id
+        datetime timestamp
+        int user_id
+        int post_id
+    }
+
+    USER ||--|{ DONATION: author_id
+    PAYABLE ||--|| DONATION: payable_id
+    DONATION {
+        int id
+        int author_id
+        int payable_id
+        sting name
+        text description
+        numeric value_target
+    }
+
+    USER ||--|{ TRANSACTION: user_id
+    PAYABLE ||--|{ TRANSACTION: payable_id
+    TRANSACTION {
+        int id
+        datetime timestamp
+        int user_id
+        numeric amount
+        int payable_id
+    }
 
 Models are not populated with a complete sets of attributes to avoid visual overload
 
