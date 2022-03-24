@@ -1,4 +1,4 @@
-``` mernaid    
+``` mermaid    
     erDiagram
         USER ||--|| USER_PROFILE: user_id
         USER ||--|{ USER_AUTHENTICATION: user_id
